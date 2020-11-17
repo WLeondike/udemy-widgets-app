@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Search = () => {
   const [term, setTerm] = useState('');
-  const [result, setResult] = useState([]);
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     const searchWiki = async () => {
@@ -16,19 +16,39 @@ const Search = () => {
           srsearch: term,
         },
       });
-      setResult(data.query.search);
+      setResults(data.query.search);
     };
-    if (term) {
-      searchWiki();
-    }
-  });
 
-  const renderedResults = result.map((result) => {
+    if (term && !results.length) {
+      searchWiki();
+    } else {
+      const timeoutId = setTimeout(() => {
+        if (term) {
+          searchWiki();
+        }
+      }, 1000);
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [term]);
+
+  const renderedResults = results.map((results) => {
     return (
-      <div key={result.pageid} className='item'>
+      <div key={results.pageid} className='item'>
+        <div className='right floated content'>
+          <a
+            className='ui tiny inverted secondary button'
+            href={`https://en.wikipedia.org?curid=${results.pageid}`}
+          >
+            Visit Page
+          </a>
+        </div>
         <div className='content'>
-          <div className='header'>{result.title}</div>
-          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
+          <div className='header'>{results.title}</div>
+          {/* only use 'dangerouslySetInnerHTML' 
+              if you trust the source of html */}
+          <span dangerouslySetInnerHTML={{ __html: results.snippet }}></span>
         </div>
       </div>
     );
