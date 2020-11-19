@@ -12,8 +12,80 @@ const options = [
     value: 'ar',
   },
   {
+    label: 'Armenian',
+    value: 'hy',
+  },
+  {
+    label: 'Chinese',
+    value: 'zh',
+  },
+  {
+    label: 'Dutch',
+    value: 'nl',
+  },
+  {
+    label: 'French',
+    value: 'fr',
+  },
+  {
+    label: 'German',
+    value: 'de',
+  },
+  {
+    label: 'Greek',
+    value: 'el',
+  },
+  {
+    label: 'Hebrew',
+    value: 'he',
+  },
+  {
     label: 'Hindi',
     value: 'hi',
+  },
+  {
+    label: 'Italian',
+    value: 'it',
+  },
+  {
+    label: 'Japanese',
+    value: 'ja',
+  },
+  {
+    label: 'Korean',
+    value: 'ko',
+  },
+  {
+    label: 'Latin',
+    value: 'la',
+  },
+  {
+    label: 'Persian',
+    value: 'fa',
+  },
+  {
+    label: 'Polish',
+    value: 'pl',
+  },
+  {
+    label: 'Portuguese',
+    value: 'pt',
+  },
+  {
+    label: 'Russian',
+    value: 'ru',
+  },
+  {
+    label: 'Spanish',
+    value: 'es',
+  },
+  {
+    label: 'Thai',
+    value: 'th',
+  },
+  {
+    label: 'Vietnamese',
+    value: 'vi',
   },
 ];
 
