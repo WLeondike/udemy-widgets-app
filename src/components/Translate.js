@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import Dropdown from './Dropdown';
 import Convert from './Convert';
 
-// Google Translate API Key will only work on localhost:3000
-const KEY = 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM';
-
 const options = [
   {
     label: 'Afrikaans',
@@ -40,7 +37,7 @@ const Translate = () => {
       />
       <hr />
       <h3 className='ui header'>Output</h3>
-      <Convert />
+      <Convert text={text} language={language} />
     </div>
   );
 };
