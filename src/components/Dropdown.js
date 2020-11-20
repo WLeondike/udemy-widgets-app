@@ -44,7 +44,7 @@ const Dropdown = ({ label, options, selected, onSelectedChange }) => {
         >
           <i className='dropdown icon' />
           <div className='text'>{selected.label}</div>
-          <div className={`menu ${open ? 'visible transition' : ''}`}>
+          <div className={`menu ${open ? `visible transition` : ''}`}>
             {renderedOptions}
           </div>
         </div>
